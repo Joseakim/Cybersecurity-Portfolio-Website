@@ -243,3 +243,26 @@ add centered profile section
     justify-content: center;
 }
 center other pages
+/* CENTER TEXT ON MOST PAGES */
+
+.page-section,
+.about-text,
+.contact-info,
+.contact-form,
+.skills-section,
+.projects-section {
+
+    text-align: center;
+}
+
+/* ABOUT PAGE CARD */
+
+.about-card {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+keep certifications layout
