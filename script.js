@@ -1,16 +1,21 @@
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-letters = letters.split("");
+/* RESIZE FIX */
 
-let fontSize = 14;
-let columns = canvas.width / fontSize;
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 
-let drops = [];
+const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
 
 for (let x = 0; x < columns; x++) {
     drops[x] = 1;
@@ -26,11 +31,19 @@ function draw() {
 
     for (let i = 0; i < drops.length; i++) {
 
-        let text = letters[Math.floor(Math.random() * letters.length)];
+        const text =
+        letters.charAt(
+        Math.floor(Math.random() * letters.length));
 
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        ctx.fillText(
+        text,
+        i * fontSize,
+        drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        if (
+            drops[i] * fontSize > canvas.height &&
+            Math.random() > 0.975
+        ) {
             drops[i] = 0;
         }
 
@@ -39,3 +52,4 @@ function draw() {
 }
 
 setInterval(draw, 35);
+fix matrix background
