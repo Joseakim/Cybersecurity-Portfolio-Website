@@ -266,3 +266,29 @@ center other pages
     justify-content: center;
 }
 keep certifications layout
+/* PROJECT IMAGES */
+
+.project-image {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    border-radius: 15px;
+
+    border: 2px solid #00ff99;
+
+    margin: 20px 0;
+
+    box-shadow: 0 0 20px rgba(0,255,153,0.5);
+
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+
+.project-image:hover {
+
+    transform: scale(1.03);
+}
+add project images
